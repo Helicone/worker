@@ -10,7 +10,7 @@ import requests
 import os
 import urllib
 
-URL = os.environ.get("BHUNKIO_URL")
+URL = os.environ.get("PROMPT_ZERO_URL")
 KEY = os.environ.get("API_KEY")
 
 HEADERS = {
