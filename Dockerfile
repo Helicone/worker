@@ -14,5 +14,4 @@ RUN apt-get install libglib2.0-0 libsm6 libxrender1 -y
 COPY weights/sd-v1-4.ckpt /app/stable-diffusion/models/ldm/stable-diffusion-v1/model.ckpt
 COPY lib /app/stable-diffusion/lib
 RUN conda run --no-capture-output -n ldm python lib/txt2img.py  --prompt "a red juicy apple floating in outer space, like a planet" || exit 0
-COPY bhunkio.py /app/stable-diffusion/bhunkio.py
-
+COPY prompt_zero.py /app/stable-diffusion/prompt_zero.py
