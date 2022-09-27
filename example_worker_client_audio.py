@@ -5,7 +5,7 @@ import os
 
 from example_helper import Config, build_url, get_job
 
-URL = os.environ.get("BHUNKIO_URL")
+URL = os.environ.get("PROMPT_ZERO_URL")
 KEY = os.environ.get("API_KEY")
 HEADERS = Config.HEADERS(KEY)
 
