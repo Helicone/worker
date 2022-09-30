@@ -9,6 +9,7 @@ from time import sleep
 import requests
 import os
 import urllib
+from typing import Optional
 
 URL = os.environ.get("PROMPT_ZERO_URL")
 KEY = os.environ.get("API_KEY")
@@ -54,6 +55,7 @@ class PromptQueue:
     model_type: str
     request_input_params: str
     model_action: str
+    name: Optional[str]
 
 
 def image_to_binary(path: str) -> str:
