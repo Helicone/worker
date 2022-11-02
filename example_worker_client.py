@@ -16,12 +16,12 @@ while True:
     data = endpoint(op)
     job: PromptRequest = (op+data).request_new_job
     if not job:
-        sleep(10)
+        sleep(2)
         continue
 
     sleep(1)
     print("POSTING NOW....")
-    with open('kirby.jpeg', mode='rb') as file:
+    with open('assets/kirby.jpeg', mode='rb') as file:
         fileContent = file.read()
         im_b64 = base64.b64encode(fileContent).decode("utf8")
         op = post_stable_diffusion_result(
