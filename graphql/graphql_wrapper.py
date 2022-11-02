@@ -1,5 +1,5 @@
 from sgqlc.operation import Operation
-from worker import Mutation, PromptRequest, SuccessResult, worker as schema
+from .worker import Mutation, PromptRequest, SuccessResult, worker as schema
 
 from python_graphql_client import GraphqlClient
 

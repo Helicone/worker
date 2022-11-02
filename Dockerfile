@@ -12,6 +12,9 @@ RUN conda env create -f environment.yaml
 RUN conda init bash
 RUN apt-get install libglib2.0-0 libsm6 libxrender1 -y
 COPY weights/sd-v1-4.ckpt /app/stable-diffusion/models/ldm/stable-diffusion-v1/model.ckpt
+RUN conda update -n base -c defaults conda
 COPY lib /app/stable-diffusion/lib
 RUN conda run --no-capture-output -n ldm python lib/txt2img.py  --prompt "a red juicy apple floating in outer space, like a planet" || exit 0
+RUN conda run --no-capture-output -n ldm python -m pip install sgqlc python_graphql_client
+COPY graphql /app/stable-diffusion/graphql
 COPY prompt_zero.py /app/stable-diffusion/prompt_zero.py

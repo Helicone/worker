@@ -2,8 +2,8 @@ import base64
 from time import sleep
 import os
 from sgqlc.endpoint.http import HTTPEndpoint
-from lib.graphql_wrapper import post_stable_diffusion_result, request_new_stable_diffusion_query
-from worker import PromptRequest, SuccessResult
+from graphql.graphql_wrapper import post_stable_diffusion_result, request_new_stable_diffusion_query
+from types.worker import PromptRequest, SuccessResult
 
 
 URL = os.environ.get("PROMPT_ZERO_URL")
